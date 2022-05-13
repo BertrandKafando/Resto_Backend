@@ -28,9 +28,9 @@ public class RestoController {
     public  List<Commande> commandes(){
         return commandeRepository.findAll();
     }
-    @GetMapping("/platsbycategory/{categorie}")
+    @GetMapping("/plats/{categorie}")
     public List<Plat> platsList(@PathVariable String categorie){
-        return platRepository.findPlatByCategorie(categorie);
+        return platRepository.findPlatByCategorieName(categorie);
     }
 
 }
