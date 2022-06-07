@@ -7,9 +7,7 @@ import ma.enset.restaurant_backend.entities.Plat;
 import ma.enset.restaurant_backend.repositories.CategoryRepository;
 import ma.enset.restaurant_backend.repositories.CommandeRepository;
 import ma.enset.restaurant_backend.repositories.PlatRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,6 +29,19 @@ public class RestoController {
     @GetMapping("/plats/{categorie}")
     public List<Plat> platsList(@PathVariable String categorie){
         return platRepository.findPlatByCategorieName(categorie);
+    }
+
+    @PostMapping("/plat/new")
+    public Plat newplat (@RequestBody Plat plat){
+       Plat saveDplat =platRepository.save(plat);
+        return  saveDplat;
+    }
+
+    @PostMapping("commande/new")
+    public Commande newCommande(@RequestBody Commande commande){
+        System.out.println(commande.getTotalPrice());
+        Commande savcmd=commandeRepository.save(commande);
+        return  savcmd;
     }
 
 }

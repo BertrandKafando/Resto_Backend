@@ -58,14 +58,12 @@ public class RestaurantBackendApplication {
                 }
 
                 Commande commande=new Commande();
-                commande.setPlat(platRepository.findAll().get(2));
                 commande.setQuantity(2);
                 commande.setCustomerName("Hassan");
                 commande.setCustomerAddress("Ryad Salam Bloc C R129");
                 commandeRepository.save(commande);
 
                 Commande commande1=new Commande();
-                commande1.setPlat(platRepository.findAll().get(5));
                 commande1.setQuantity(5);
                 commande1.setCustomerName("Kamal");
                 commande1.setCustomerAddress("Ryad Salam Bloc C R129");

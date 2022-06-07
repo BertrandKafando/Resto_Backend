@@ -15,8 +15,9 @@ public class Commande {
     private String customerName;
     private String customerAddress;
     private double TotalPrice;
-    @ManyToOne()
-    Plat plat;
+    private  String nomplat;
+    private  double prixplat;
+
 
 
 }

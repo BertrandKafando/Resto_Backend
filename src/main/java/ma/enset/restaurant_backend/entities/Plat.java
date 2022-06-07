@@ -20,9 +20,6 @@ public class Plat {
     private  String image;
     private double rate;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @OneToMany(mappedBy = "plat")
-    List<Commande>commandes;
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToOne()
     Categorie categorie;
 }
