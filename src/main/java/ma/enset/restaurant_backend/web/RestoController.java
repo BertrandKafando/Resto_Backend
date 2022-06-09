@@ -43,5 +43,10 @@ public class RestoController {
         Commande savcmd=commandeRepository.save(commande);
         return  savcmd;
     }
+    @GetMapping("/commande/{id}")
+    public boolean deleteCommande(@PathVariable Long id){
+        commandeRepository.deleteById(id);
+        return  true;
+    }
 
 }
